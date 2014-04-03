@@ -3,10 +3,10 @@ require 'sequel'
 
 describe "Tasks" do
   before do
-    DB = Sequel.connect('postgres://gschool_user:password@localhost:5432/tasks')
-    @tasks = Tasks.new(DB)
+    db = Sequel.connect('postgres://gschool_user:password@localhost:5432/tasks')
+    @tasks = Tasks.new(db)
 
-    DB.create_table! :tasks do
+    db.create_table! :tasks do
       primary_key :id
       String :name
     end
