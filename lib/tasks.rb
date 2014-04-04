@@ -9,7 +9,7 @@ class Tasks
   end
 
   def index
-    @tasks.to_a
+    @tasks.all
   end
 
   def show(id)
@@ -18,6 +18,10 @@ class Tasks
 
   def update(id, updated_name)
     @tasks.where('id = ?', id).update(:name => updated_name)
+  end
+
+  def show_all
+    @tasks.select(:name).to_a
   end
 
   def delete(id)

@@ -32,4 +32,12 @@ describe "Tasks" do
     @tasks.delete(1)
     expect(@tasks.index).to eq([{:id => 2, :name => "My second task"}])
   end
+
+  it "can show all invidividual tasks names" do
+    @tasks.create(name: "My second task")
+    expect(@tasks.show_all).to eq [
+      {name:  "My first task"},
+      {name:  "My second task"}
+    ]
+  end
 end
