@@ -16,8 +16,8 @@ class Tasks
     @tasks[:id => id]
   end
 
-  def update(id, updated_name)
-    @tasks.where(:id => id).update(:name => updated_name)
+  def update(id, updated_name, completed) 
+    @tasks.where(:id => id).update(:name => updated_name, :completed => completed)
   end
 
   def show_all
