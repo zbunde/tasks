@@ -17,7 +17,7 @@ class Tasks
   end
 
   def update(id, updated_name)
-    @tasks.where('id = ?', id).update(:name => updated_name)
+    @tasks.where(:id => id).update(:name => updated_name)
   end
 
   def show_all
@@ -25,7 +25,7 @@ class Tasks
   end
 
   def delete(id)
-    @tasks.where('id = ?', id).delete
+    @tasks.where(:id => id).delete
   end
 end
 
